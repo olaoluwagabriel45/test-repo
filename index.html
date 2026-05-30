@@ -14,7 +14,7 @@
     }
 
     body {
-      background: #f4f7ff;
+      background: linear-gradient(35deg, blue 0%, white 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -90,7 +90,7 @@
     }
 
     .but:hover {
-      background-color: black;
+      background-color: rgb(17, 12, 12);
     }
 
     .line {
@@ -107,7 +107,7 @@
     }
 
     .signup:hover {
-      background-color: black;
+      background-color: rgb(36, 30, 30);
     }
 
     /* Mobile Responsive */
@@ -130,6 +130,11 @@
         height: 42px;
         font-size: 15px;
       }
+      .img{
+        height: 50px;
+        
+        /* margin-top: 40px; */
+      }
     }
   </style>
 </head>
@@ -137,9 +142,8 @@
 <body>
 
   <div class="container">
-
     <div class="top-text">
-      <h2>HYBEEKAY TECH HUB</h2>
+      <h2><img class="img" src="./image/QIYD6779.PNG" height="400px" alt=""></h2>
     </div>
 
     <div class="Big-con">
@@ -164,10 +168,9 @@
           id="password"
         />
 
-        <button onclick="logIn()" class="but">
+        <button id="butOn" onclick="logIn()" class="but">
           Log In
         </button>
-
         <span class="line">
           ---------------- OR ----------------
         </span>
@@ -230,7 +233,10 @@
       console.log(allInput);
 
       alert('Login Successful!');
-
+       butOn.innerText = '...loading'
+            setTimeout(()=>{
+                window.location.href = 'dashboard.html'
+            }, 1500)
       // CLEAR INPUTS
       email.value = '';
       password.value = '';
