@@ -14,7 +14,7 @@
     }
 
     body {
-      background: linear-gradient(35deg, blue 0%, white 100%);
+      background: linear-gradient(35deg, #3E4095 0%, white 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -174,10 +174,10 @@
         <span class="line">
           ---------------- OR ----------------
         </span>
-
-        <button class="signup">
+        <a href="signup.html"><button id="signUp" class="signup">
           Sign Up
-        </button>
+        </button></a>
+        
 
       </div>
     </div>
@@ -229,14 +229,19 @@
         'users',
         JSON.stringify(allInput)
       );
-
       console.log(allInput);
-
       alert('Login Successful!');
        butOn.innerText = '...loading'
             setTimeout(()=>{
                 window.location.href = 'dashboard.html'
             }, 1500)
+
+            const signUp=document.querySelector('.signup')
+            
+            // signUp.innerText='...loading'
+            // setTimeout(()=>{
+            //     window.location.href='signup.html'
+            // }, 1500)
       // CLEAR INPUTS
       email.value = '';
       password.value = '';
