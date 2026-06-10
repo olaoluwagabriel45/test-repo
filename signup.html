@@ -6,31 +6,360 @@
 </head>
 <body>
     <style>
+        body {
+            background: linear-gradient(35deg, #3E4095 0%, white 100%);
+        }
         .big-con{
-            height: 490px;
-            width: 320px;
-           background-color: grey;
+            height: 530px;
+            width: 380px;
+           background-color: rgb(216, 212, 212);
+           overflow: hidden;
             justify-self: center;
             border-radius: 10px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 10px;
-        }
-        .tx1{
-            text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
         }
         .img1{
             margin-top: 15px;
             margin-left: 10px;
             height: 20px;
+            margin-bottom: 10px;
         }
+        .get {
+           line-height: 20px;
+           font-size: 20px;
+           font-weight: bold;
+        }
+        .cre {
+            font-size: 13px;
+        }
+        .form {
+    margin-left: 19px;
+    margin-top: 10px;
+}
+.forma {
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 6px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    border-color: grey;
+    font-size: small;
+}
+.forma::placeholder {
+    color: grey;
+    font-size: smaller;
+}
+.form {
+    font-size: small;
+}
+/* form.input {
+    margin-left: 20px;
+} */
+ .formb {
+    width: 105px;
+    height: 30px;
+    margin-top: 6px;
+    border: 6px thick;
+    border-radius: 10px;
+    margin-left: 7px;
+    margin-bottom: 10px;
+ }
+ .formb:hover {
+    cursor: pointer;
+ }
+ .Gender {
+    margin-left: 19px;
+    margin-top: 10px;
+ }
+ .formc {
+    /* margin-top: 10px; */
+    /* color: red; */
+    width: 338px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-left: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+ }
+ .formc:hover {
+    cursor: pointer;
+ }
+ .no {
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 338px;
+    height: 30px;
+    border-radius: 10px;
+    /* margin-bottom: 10px; */
+    border: none;
+    outline: none;
+    padding-left: 10px;
+ }
+ .no::placeholder {
+    font-size: smaller;
+    padding-left: 0px;
+ }
+ span {
+    font-weight: bolder;
+ }
+ .yi {
+    font-weight: lighter;
+ }
+ .sp {
+   margin-top: 2px;
+   margin-bottom: 8px;
+ }
+ .yo {
+    color: blue;
+    font-weight: bold;
+ }
+ .yo:hover {
+    text-decoration: underline 0.7px;
+    color: blue;
+    cursor: pointer;
+ }
+ .yo:active {
+    color: red;
+ }
+ .yoo {
+    text-decoration: none;
+ }
+ .pass {
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 338px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+
+ }
+ .pass::placeholder {
+    font-weight: lighter;
+    font-size: smaller;
+    padding-left: 0px;
+ }
+ .hi {
+   font-weight: lighter;
+   margin-bottom: 8px;
+ }
+ .hii {
+   color: blue;
+ }
+ .hii:hover {
+   text-decoration: underline;
+   color: blue;
+   cursor: pointer;
+ }
+ .hii:active {
+   color: red;
+ }
+ .ho {
+   text-decoration: none;
+ }
+ .by {
+   font-weight: lighter;
+ }
+ .iv {
+   margin-bottom: 8px;
+ }
+ .term {
+   color: blue;
+   font-weight: bold;
+ }
+ .term:hover {
+   text-decoration: underline;
+   color: blue;
+   cursor: pointer;
+ }
+ .te {
+   color: blue;
+   text-decoration: none;
+ }
+ .te:active {
+   color: red;
+   text-decoration: underline red;
+ }
+ .th {
+   font-weight: lighter;
+ }
+ .co {
+   margin-bottom: 10px;
+ }
+ .pri {
+   font-weight: bold;
+   color: blue;
+ }
+ .pri:hover {
+   text-decoration: underline;
+   color: blue;
+   cursor: pointer;
+ }
+ .bi {
+   color: blue;
+   text-decoration: none;
+ }
+ .sub {
+   width: 338px;
+   height: 35px;
+    border-radius: 20px;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    background-color: blue;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-weight: bold;
+    font-size: small;
+    cursor: pointer;
+    margin-bottom: 2px;
+ }
+ .sub:active {
+   opacity: 0.6;
+ }
+ .al {
+    margin-left: 10px;
+   width: 338px;
+   height: 35px;
+   padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px thin;
+    border-radius: 20px;
+    font-size: smaller;
+    cursor: pointer;
+ }
     </style>
     <nav>
         <!-- <h2 class="tx1">Signup Page</h2> -->
         <div class="big-con">
             <a href="index.html"><span class="back"><img class="img1" src="./image/imgi_62_close-button.png" alt=""></span></a>
+                <div><span class="get">Get Started with </span></div>
+                <div><span class="cre">Create an account to connect with friends,</span></div>
+                <div class="form">
+                <label for="form"><span>Name</span></label><br>
+                <input id="firstName" class="forma" type="text" placeholder="First Name">
+                <input id="surName" class="forma" type="text" placeholder="Surname"><br><br>
+                <label for=""><span>Date of Birth</span></label><br>
+                <select class="formb" name="Day" id="">
+                    <option value=""></option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                </select>
+                <select class="formb" name="" id="">
+                    <option value=""></option>
+                    <option value="">January</option>
+                    <option value="">February</option>
+                    <option value="">March</option>
+                    <option value="">April</option>
+                    <option value="">May</option>
+                    <option value="">June</option>
+                    <option value="">July</option>
+                    <option value="">August</option>
+                    <option value="">September</option>
+                    <option value="">October</option>
+                    <option value="">November</option>
+                    <option value="">December</option>
+                </select>
+                <select class="formb" name="" id="">
+                    <option value=""></option>
+                    <option value="">2026</option>
+                    <option value="">2025</option>
+                    <option value="">2024</option>
+                    <option value="">2023</option>
+                    <option value="">2022</option>
+                    <option value="">2021</option>
+                    <option value="">2020</option>
+                    <option value="">2019</option>
+                    <option value="">2018</option>
+                    <option value="">2017</option>
+                    <option value="">2016</option>
+                    <option value="">2015</option>
+                    <option value="">2014</option>
+                    <option value="">2013</option>
+                    <option value="">2012</option>
+                    <option value="">2011</option>
+                    <option value="">2010</option>
+                    <option value="">2009</option>
+                    <option value="">2008</option>
+                    <option value="">2007</option>
+                    <option value="">2006</option>
+                    <option value="">2005</option>
+                    <option value="">2004</option>
+                    <option value="">2003</option>
+                    <option value="">2002</option>
+                    <option value="">2001</option>
+                    <option value="">2000</option>
+                </select>
+                <label for="Gender"><span>Gender</span></label><br>
+                <select class="formc" name="" id="" >
+                    <option value=""></option>
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                    <option value="">Custom</option>
+                </select>
+                <label class="num" for=""><span>Mobile number or email address</span></label><br>
+                <input id="email" class="no" type="" placeholder="Mobile number or email address">
+                <div class="sp"><span class="yi">You may receive notifications from us. <a class="yoo" href=""><span class="yo">Learn why we ask for your contact information</span></a></span></div>
+                <label for="pass"><span>Password</span></label><br>
+                <input id="password" class="pass" type="password" placeholder="Password" minlength="7" maxlength="10"><br><br>
+                <button id="btnText" onclick="logIn()" class="sub">Submit</button>
+            <a href="index.html"><button class="al">I already have an account</button></a>
         </div>
     </nav>
+    <script>
+      const allInput=[]
+      const logIn=()=>{
+        // alert('yoooo')
+        const firstNameValue=document.getElementById('firstName').value
+        const surNameValue=document.getElementById('surName').value
+        const emailValue=document.getElementById('email').value
+        const passwordValue=document.getElementById('password').value
+        // console.log(firstNameValue, surNameValue, emailValue, passwordValue);
+        if(firstNameValue.trim()=='' || surNameValue.trim()=='' || emailValue.trim()==''){
+          alert('input all values!')
+        }else{
+          const userObj={firstNameValue, surNameValue, emailValue, passwordValue}
+          console.log(userObj);
+          let found = allInput.find(user=>user.emailValue === userObj.emailValue)
+         if (found){
+          alert('user alreadt')
+          }
+        }
+        
+      }
+    </script>
 </body>
 </html>
