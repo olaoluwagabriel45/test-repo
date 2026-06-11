@@ -377,7 +377,7 @@
         </div>
     </nav>
     <script>
-      let allInput=[]
+      let allUser=[]
       const logIn=()=>{
         // alert('yoooo')
         const firstNameValue=document.getElementById('firstName').value
@@ -392,9 +392,8 @@
       email: emailValue,
       password: passwordValue
     };
-
     // CHECK IF USER ALREADY EXISTS
-    let found = allInput.find(
+    let found = allUser.find(
       user => user.email === userObj.email
     );
 
@@ -405,14 +404,14 @@
     } else {
 
       // PUSH NEW USER
-      allInput.push(userObj);
+      allUser.push(userObj);
 
       // SAVE TO LOCAL STORAGE
       localStorage.setItem(
         'users',
-        JSON.stringify(allInput)
+        JSON.stringify(allUser)
       );
-      console.log(allInput);
+      console.log(allUser);
       alert('Login Successful!');
        btnText.innerText = '...loading'
             setTimeout(()=>{
