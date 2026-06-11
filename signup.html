@@ -12,7 +12,6 @@
     padding: 20px;
     font-family: Arial, sans-serif;
 }
-
 .big-con{
     width: 100%;
     max-width: 380px;
@@ -33,6 +32,10 @@
            line-height: 20px;
            font-size: 20px;
            font-weight: bold;
+        }
+        .hybe{
+            color: #3E4095;
+            font-size: 15px;
         }
         .cre {
             font-size: 13px;
@@ -111,7 +114,7 @@
    margin-bottom: 8px;
  }
  .yo {
-    color: blue;
+    color: #3E4095;
     font-weight: bold;
  }
  .yo:hover {
@@ -212,7 +215,7 @@
     font-weight: bold;
     font-size: small;
     cursor: pointer;
-    margin-bottom: 2px;
+    margin-bottom: 9px;
  }
  .sub:active {
    opacity: 0.6;
@@ -272,7 +275,7 @@
         <!-- <h2 class="tx1">Signup Page</h2> -->
         <div class="big-con">
             <a href="index.html"><span class="back"><img class="img1" src="./image/imgi_62_close-button.png" alt=""></span></a>
-                <div><span class="get">Get Started with </span></div>
+                <div><span class="get">Get Started with <span class="hybe">HYBEEKAY TECH HUB</span> </span></div>
                 <div><span class="cre">Create an account to connect with friends,</span></div>
                 <div class="form">
                 <label for="form"><span>Name</span></label><br>
@@ -374,7 +377,7 @@
         </div>
     </nav>
     <script>
-      const allInput=[]
+      let allInput=[]
       const logIn=()=>{
         // alert('yoooo')
         const firstNameValue=document.getElementById('firstName').value
@@ -382,17 +385,51 @@
         const emailValue=document.getElementById('email').value
         const passwordValue=document.getElementById('password').value
         // console.log(firstNameValue, surNameValue, emailValue, passwordValue);
-        if(firstNameValue.trim()=='' || surNameValue.trim()=='' || emailValue.trim()==''){
+        if(firstNameValue.trim()=='' || surNameValue.trim()=='' || emailValue.trim()=='' || passwordValue.trim()==''){
           alert('input all values!')
         }else{
-          const userObj={firstNameValue, surNameValue, emailValue, passwordValue}
-          console.log(userObj);
-          let found = allInput.find(user=>user.emailValue === userObj.emailValue)
-         if (found){
-          alert('user alreadt')
-          }
-        }
-        
+          const userObj = {
+      email: emailValue,
+      password: passwordValue
+    };
+
+    // CHECK IF USER ALREADY EXISTS
+    let found = allInput.find(
+      user => user.email === userObj.email
+    );
+
+    if (found) {
+
+      alert('User already exists!');
+
+    } else {
+
+      // PUSH NEW USER
+      allInput.push(userObj);
+
+      // SAVE TO LOCAL STORAGE
+      localStorage.setItem(
+        'users',
+        JSON.stringify(allInput)
+      );
+      console.log(allInput);
+      alert('Login Successful!');
+       btnText.innerText = '...loading'
+            setTimeout(()=>{
+                window.location.href = 'dashboard.html'
+            }, 1500)
+
+            const signUp=document.querySelector('.signup')
+            
+            // signUp.innerText='...loading'
+            // setTimeout(()=>{
+            //     window.location.href='signup.html'
+            // }, 1500)
+      // CLEAR INPUTS
+      email.value = '';
+      password.value = '';
+    }
+  }
       }
     </script>
 </body>
